@@ -1,0 +1,1463 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;500;600&family=Raleway:wght@300;400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #FFFFFF;          /* Pure White */
+    --secondary-color: #F7F7F7;        /* Off-White */
+    --heading-color: #000000;       /* Black */
+    --text-color: #333333;             /* Dark Gray */
+    --bx-shadow: 0 4px 6px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
+  }
+
+/* ---------------------------------------------------------------------------------- */
+/* --------------------------> UNIVERSAL SOME DESIGN <--------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5{
+    font-family: 'Raleway', sans-serif;
+ }
+ p, li , a, strong, span{
+    font-family: 'Nunito Sans', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.show_btn_box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn_show_more{
+  display: inline-block;
+  padding: 12px 20px;
+  border: 2px solid var(--heading-color);
+  color: var(--heading-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: .4s;
+  background: transparent;
+  margin-top: 10px;
+}
+.btn_normal{
+  display: inline-block;
+  padding: 13px 20px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: .4s;
+  background: transparent;
+  margin-top: 10px;
+}
+.btn_normal:hover{
+  background-color: var(--primary-color);
+  color: var(--heading-color);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* -----------------------> NAVBAR SECTION DESIGN <------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+
+.logo{
+    width: 150px;
+    height: auto;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logo a h2{
+    font-weight: normal;
+    font-size: 2rem;
+}
+#header{
+  position: relative;
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    transition: .4s;
+}
+#nav.active_nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-color);
+}
+.mob_nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.toggle span{
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#nav.active_nav .toggle span{
+  background-color: var(--heading-color);
+}
+.toggle span:nth-child(1){
+    transform: translateY(-11px);
+    width: 25px;
+    left: 10px;
+}
+.toggle.active-toggle span:nth-child(1){
+    width: 30px;
+    transform: translateY(0) rotate(45deg);
+    transition-delay: 0.125s;
+}
+.toggle span:nth-child(2){
+    transform: translateY(11px);
+    width: 15px;
+    left: 10px;
+}
+.toggle.active-toggle span:nth-child(2){
+    width: 30px;
+    transform: translateY(0) rotate(315deg);
+    transition-delay: 0.25s;
+}
+.toggle.active-toggle span:nth-child(3){
+    transform: translateX(50px);
+    width: 15px;
+}
+.links{
+    margin: 0;
+}
+.links li{
+    display: inline-block;
+    position: relative;
+}
+.links li:nth-child(2){
+    animation-delay: 0.5s;
+}
+.links li:nth-child(3){
+    animation-delay: 0.6s;
+}
+.links li:nth-child(4){
+    animation-delay: 0.7s;
+}
+.links li:nth-child(5){
+    animation-delay: 0.8s;
+}
+.links li:nth-child(6){
+    animation-delay: 0.9s;
+}
+.links li a{
+    margin: 0 13px;
+    transition: all .5s ease;
+    font-size: 17px;
+    font-weight: normal;
+    transition: .4s;
+    color: var(--primary-color);
+    text-transform:uppercase;
+}
+.links li a::after{
+    content: '';
+    width: 0%;
+    height: 1.5px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    margin-left: 10px;
+    transition: .5s;
+}
+#nav.active_nav .links li a{
+  color: var(--text-color);
+}
+#nav.active_nav .links li a::after{
+  background-color: var(--text-color);
+}
+.links li a:hover::after,
+.links li a.active::after{
+    width: 80%;
+}
+.links li a.link-active{
+    color: var(--primary-color);
+}
+.links li a:hover{
+    color: var(--primary-color);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* ------------------------> HERO SECTION DESIGN <--------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  .slides-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+  }
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slide .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+  }
+  .slide .overlay h2{
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  .slide .overlay p{
+    line-height: 26px;
+    font-size: 18px;
+  }
+  .slide h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .slide p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: .4s;
+  }
+  
+  .dot.active {
+    width: 30px;
+    border-radius: 10px;
+  }
+  
+  .prev-arrow,
+  .next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid var(--secondary-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: 200;
+  }
+  
+  .prev-arrow {
+    left: 80px;
+  }
+  
+  .next-arrow {
+    right: 80px;
+  }
+  
+  .prev-arrow:hover,
+  .next-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------> ABOUT SECTION DESIGN <----------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+#about_us{
+  display: flex;
+}
+.left_about{
+  flex-basis: 50%;
+  background-color: var(--heading-color);
+  padding: 50px 80px;
+  align-self: center;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.left_about h2{
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+.left_about p{
+  color: var(--primary-color);
+  line-height: 24px;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+.accordion{
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.accordion ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accordion li {
+  padding: 15px 20px;
+  border-top: 1px solid var(--secondary-color);
+}
+.accordion li:last-child{
+  border-bottom: 1px solid var(--secondary-color);
+}
+/* ----------> accordion header style <------------- */
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.01);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  
+}
+.accordion-header .accordion_tag{
+  margin: 0;
+}
+.accordion-header .accordion_sign{
+  position: relative;
+}
+.accordion-header .accordion_sign span{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  width: 20px;
+  height: 4px;
+  color: black;
+  display: block;
+  transition: .4s;
+}
+.accordion-header .accordion_sign span:nth-child(2){
+  transform: rotate(90deg);
+}
+.accordion-header.active .accordion_sign span:nth-child(2){
+  transform: rotate(0);
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  padding: 0px 0;
+}
+.accordion-content p{
+  margin-top: 20px;
+  color: var(--secondary-color);
+  line-height: 24px;
+}
+.accordion-content.show {
+  max-height: 300px; /* Adjust the value to fit your content */
+}
+
+/* -------------------------------------> right about and icon box design <---------------------------------- */
+
+.right_about{
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  flex-direction: column;
+  padding: 50px 80px 50px 50px;
+}
+.ic-box{
+  display: flex;
+  margin-bottom: 30px;
+}
+.ic i{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-right: 25px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.ic i::after{
+  content: '';
+  background-color: var(--text-color);
+  width: 50px;
+  height: 1px;
+  transform: rotate(90deg);
+  position: absolute;
+  bottom: -24px;
+  right: 18%;
+}
+.headline__third{
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.p-small{
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--p);
+  line-height: 1.8rem;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* -------------------> REWARDS SECTION DESIGN <--------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+#rewards{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 100px;
+  background-color: var(--heading-color);
+  flex-wrap: wrap;
+}
+.reward{
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.reward i{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 10px solid #F2F2F1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+.reward h2{
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 10px 0;
+  color: var(--primary-color);
+}
+.reward h4{
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+}
+.reward p{
+  color: var(--secondary-color);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* ------------------------> TESTIMONIAL SECTION DESIGN <------------------ */
+/* ---------------------------------------------------------------------------------- */
+
+#testimonial{
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  justify-content: center;
+  flex-direction: column;
+  padding: 80px 100px;
+}
+
+/* --------------------> heading style design <---------------------------- */
+
+.heading{
+  color: var(--heading-color);
+  margin-bottom: 50px;
+  text-transform:capitalize;
+  position: relative;
+}
+.heading::before{
+  content: '';
+  width: 80%;
+  height: 4px;
+  background-color: var(--heading-color);
+  position: absolute;
+  bottom: -10px ;
+  left: 10%;
+}
+
+/* --------------------> slider container design <---------------------------- */
+
+.testi-slider-container {
+    width: 600px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(130, 156, 239, 0.3);
+    border-radius: 8px;
+    position: relative;
+  }
+  .testi-slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* --------------------> slider item design <---------------------------- */
+
+  .testi-slider_item{
+    background: url('../images/quotes.png');
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: 90% 10%;
+    flex: 0 0 100%;
+    width:auto;
+    height:auto;
+    background-color: var(--primary-color);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  /* --------------------> slider item top section design <---------------------------- */
+
+  .testi-slider_item .user_details{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .testi-slider_item .user_details .user_avatar{
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+  }
+  .testi-slider_item .user_details .user_avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(70%);
+  }
+  .testi-slider_item .user_details .user_info h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+    text-align: start;
+  }
+  .testi-slider_item .user_details .user_info p{
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--heading-color);
+    text-align: start;
+  }
+
+  /* -----------------------> slider item paragrap desing <------------------------------- */
+
+  .testi-slider_item .con{
+    line-height: 25px;
+    font-size: 14px;
+    margin: 20px 0;
+    color: var(--paragraph-color);
+    padding: 0 40px;
+  }
+
+  /* --------------------> slider item footer design <---------------------------- */
+
+.user_social ul li{
+  display: inline-block;
+}
+.user_social ul li a i{
+  display: block;
+  margin: 0px 5px;
+  color: var(--heading-color);
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--heading-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* --------------------> slider item nex previous button  design <---------------------------- */
+
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--heading-color);
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(130, 156, 239, 0.3);
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+ 
+/* ---------------------------------------------------------------------------------- */
+/* -------------------------> BLOG SECTION DESIGN <--------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+
+#blog{
+  padding: 80px 80px;
+  background-color: var(--secondary-color);
+}
+
+/* ------------------->blog section heading style <---------- */
+.headline_box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* -----------------> blog container style <---------------------- */
+
+.blog_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.blog_content{
+  flex-basis: 29%;
+  margin: 20px;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* -------------------------> blog thumbnail style <--------------------- */
+
+.blog_content .thumb_box{
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.blog_content img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: .4s;
+}
+.blog_content img:hover{
+  transform: scale(1.1);
+}
+/* -------------> blog body design <-------------------- */
+.blog_body{
+  padding: 14px 20px 14px 20px;
+}
+.blog_body h4{
+  margin: 5px 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.blog_body h4 a{
+  text-decoration: none;
+  color: var(--heading-color);
+  transition: .4s;
+}
+.blog_body h4 a:hover{
+  color: rgb(57, 222, 222);
+}
+.blog_body p{
+  line-height: 26px;
+  margin-bottom: 10px;
+  font-size: var(--font-size);
+  color: var(--paragraph-color);
+}
+
+/* ---------------> blog meta data desing <-------------------- */
+
+.blog_body .meta_data{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog_body .meta_data .tag_data, 
+.blog_body .meta_data .category_data{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00bcd4;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+.blog_body .meta_data i{
+  font-size: 14px;
+  margin-right: 3px;
+  color: white;
+}
+.blog_body .meta_data p{
+  margin: 0;
+  font-size: 13px;
+  color: white;
+}
+.blog_body .meta_data p a{
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 5px;
+  color: white;
+}
+
+/* ---------------> blog author data desing <---------------- */
+
+.author_data{
+display: flex;
+align-items: center;
+border-top:  1px solid gainsboro;
+padding-top: 15px;
+}
+.author_data .author_avatar{
+width: 50px;
+height: 50px;
+margin-right: 10px;
+}
+.author_data .author_avatar img{
+width: 100%;
+height: 100%;
+border-radius: 50%;
+}
+.author_data .author_details h4{
+margin: 0;
+font-size: 15px;
+}
+.author_details p{
+font-size: 13px;
+margin: 0;
+color: var(--paragraph-color);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------> CLIENTS SECTION DESIGN <--------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+
+#clients{
+  padding: 80px 100px;
+}
+.my_clients{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.client{
+  flex-basis: 20%;
+}
+.client a img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------> PRICE SECTION DESIGN <--------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+#plan{
+  padding: 50px 80px;
+  background-color: var(--secondary-color);
+}
+.price_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.price_item{
+  flex-basis: 30%;
+  box-shadow: 5px 5px 25px rgba(0,0,0,0.1);
+  margin: 20px;
+  background-color: var(--primary-color);
+  overflow: hidden;
+  border-radius: 5px;
+  transition: .5s;
+}
+.price_item:hover{
+ transform: translateY(-15px);
+}
+.price_container .price_item .ex-head{
+  width: 100%;
+  height: 220px !important;
+}
+.price_container .price_item .ex-head img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .5s;
+}
+.price_container .price_item .ex-head img:hover{
+  transform: scale(1.1);
+}
+.price_item .ex-body{
+  padding: 20px 20px;
+  border-bottom: 1px solid var(--text-color);
+}
+.ex-body p{
+  font-size: 14px;
+  color: var(--text-color);
+}
+.ex-body a p{
+  font-weight: 400;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+.ex-body a p:hover{
+  color: var(--sfc);
+}
+.ex-body .ib{
+  display: flex;
+  justify-content: space-between;
+}
+.ex-body .ib i{
+  color: var(--text-color);
+  font-size: 1.3rem;
+}
+
+.ex-footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+}
+.ex-footer span{
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.ex-footer strong{
+  font-size: 16px;
+  font-weight: 600;
+}
+.ex-footer i{
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* --------------------> CONTACT SECTION DESIGN <--------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+#contact{
+  padding: 50px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.left_contact{
+  flex-basis: 50%;
+}
+.left_contact h2{
+  margin-bottom: 20px;
+}
+.left_contact p{
+  line-height: 25px;
+}
+.right_contact{
+  flex-basis: 50%;
+  padding-right: 3rem;
+}
+.form_top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.form_top input{
+  flex-basis: 50%;
+  display: block;
+  padding: 13px 20px;
+  margin-bottom: 20px;
+}
+textarea{
+  display: block;
+  padding: 13px 20px;
+  margin:10px 0;
+  width: 100%;
+}
+input[type="submit"]{
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--heading-color);
+  color: var(--heading-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: .4s;
+  background: transparent;
+  margin-top: 5px;
+  
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------> FOOTER SECTION DESIGN <---------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+#footer{
+  background-color: var(--heading-color);
+  padding: 50px 100px;
+  display: flex;
+}
+#footer .footer-div{
+  margin: 0 30px;
+}
+.footer-1, .footer-4{
+  flex-basis: 30%;
+}
+.footer-2, .footer-3{
+  flex-basis:20%
+}
+.footer-1 h2 a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    display: block;
+}
+.footer-1 p{
+  color: var(--secondary-color);
+  text-align: justify;
+  line-height: 27px;
+  font-weight: 400;
+  font-size: 15px;
+}
+.footer-div h2{
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 1.4rem;
+  position: relative;
+  display: inline-block;
+}
+.footer-div h2::before{
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+.footer-div ul{
+  list-style: none;
+}
+.footer-div ul li a{
+  display: inline-block;
+  margin: 5px 0;
+  font-size: 16px;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: .4s;
+}
+.footer-div ul li a:hover{
+  color: var(--primary-color);
+}
+.footer-4 ul li{
+  display: inline-block;
+}
+.footer-4 ul li a i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* --------------->BLOGS PAGE DESIGN HERE<---------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+#articles{
+  padding: 50px 100px;
+}
+.single_article{
+  padding: 150px 100px !important;
+}
+.single_container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.left_single{
+  flex-basis: 60%;
+}
+
+.left_single .meta_data h1{
+  color: var(--heading-color);
+  font-size: 3rem;
+}
+.left_single .meta_data p{
+  color: var(--text-color);
+  font-size: var(--pfs);
+  margin: 10px 0;
+}
+.left_single .meta_data .author{
+  color: var(--text-color);
+  margin-right: 10px;
+}
+.left_single img{
+  width: 90%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.left_single p{
+  color: var(--text-color);
+  line-height: 28px;
+  padding-right: 2rem;
+  text-align: justify;
+  margin-top: 20px;
+}
+.right_single{
+  flex-basis: 35%;
+  background-color: var(--secondary-color);
+  min-height: 100vh;
+  padding: 30px 25px;
+  border-radius: 10px;
+}
+.right_single h2{
+  color: var(--heading-color);
+  margin: 20px 0;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+.right_single ul li a{
+  display: block;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+/* -------------------> SINGLE BLOG DESIGN <--------------------------------- */
+.per-blog{
+  margin-bottom: 50px;
+}
+.per-blog img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.per-blog h2 a{
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+  display: block;
+}
+.per-blog p{
+  line-height: 25px;
+  font-size: 15px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.post-meta span{
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+.read-more-btn{
+  padding: 10px 30px;
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* -------------------->PAGE BANNER STYLE<------------------------------------ */
+/* ---------------------------------------------------------------------------------- */
+
+#page_banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background-color: var(--secondary-color);
+  padding-top: 50px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------> RESPONSIVE DESIGN FOR TABLET DEVICE<----------------- */
+/* ---------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 901px) and (max-width: 1230px) {
+  #nav{
+    padding: 10px 60px;
+}
+.right_about{
+  padding: 50px;
+}
+#blog, #plan{
+  padding: 50px;
+ }
+ .blog_content, .price_item{
+  flex-basis: 45%;
+ }
+  #footer{
+   padding: 40px 50px;
+  }
+  #footer .footer-div{
+   margin: 0 20px;
+  }
+  /* -----------------> single article desing <-------------------------- */
+  .single_article{
+    padding: 150px 80px !important;
+  }
+  .single_container{
+    justify-content: flex-start;
+   }
+   .left_single{
+    flex-basis: 100%;
+    margin-bottom: 50px;
+   }
+   .right_single{
+    flex-basis: 50%;
+   }
+   .left_single .meta_data h1{
+    font-size: 2.8rem;
+   }
+   .left_single img{
+    width: 90%;
+    height: 400px;
+    border-radius: 10px;
+   }
+   .left_single p{
+    margin-top: 20px;
+    padding-right: 2rem;
+    text-align: justify;
+   }
+ }
+ 
+ /* ---------------------------------------------------------------------------------- */
+/* ---------> RESPONSIVE DESIGN FOR MOBILE DEVICE (LANDSCAPE)<-------- */
+/* ---------------------------------------------------------------------------------- */
+ @media only screen and (max-width: 900px) {
+  #nav{
+    padding: 10px 50px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+  .mob_nav{
+    width: 100%;
+}
+.links{
+    display: none;
+}
+.links li a::after{
+    margin: 0;
+}
+.links.active{
+    display: block;
+}
+.toggle{
+    visibility: visible;
+   }
+   .links li{
+    display: block;
+}
+.links li a{
+    margin: 20px 0;
+    display: block;
+}
+.prev-arrow {
+  left: 50px;
+}
+
+.next-arrow {
+  right: 50px;
+}
+#about_us, #contact{
+  flex-wrap: wrap;
+}
+.left_about{
+  flex-basis: 100%;
+  padding: 50px;
+}
+.right_about{
+  flex-basis: 100%;
+  padding: 50px;
+}
+.reward{
+  flex-basis: 50%;
+  margin: 20px 0;
+}
+
+#testimonial{
+  padding: 50px;
+}
+#clients{
+  display: none;
+}
+.testi-slider-container{
+  width: 90%;
+}
+#blog, #plan, #contact{
+  padding: 50px;
+ }
+ .blog_content, .price_item, .left_contact{
+  flex-basis: 100%;
+ }
+ .right_contact{
+  flex-basis: 100%;
+  margin-top: 30px;
+  padding-right: 0;
+ }
+ .blog_content .thumb_box{
+  height: 300px;
+ }
+#footer{
+  padding: 40px 50px;
+  flex-wrap: wrap;
+ }
+ #footer .footer-div{
+  margin:20px;
+ }
+ .footer-1, .footer-4{
+  flex-basis: 50%;
+}
+.footer-2, .footer-3{
+  flex-basis:30%
+}
+#articles{
+  padding: 50px;
+}
+.per-blog{
+  margin-bottom: 30px;
+}
+/* -----------------> single article desing <-------------------------- */
+.single_article{
+  padding: 100px 50px !important;
+}
+.single_container{
+  justify-content: flex-start;
+ }
+ .left_single{
+  flex-basis: 100%;
+  margin-bottom: 30px;
+ }
+ .right_single{
+  flex-basis: 75%;
+ }
+ .left_single .meta_data h1{
+  font-size: 2.5rem;
+ }
+ .left_single img{
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+ }
+ .left_single p{
+  margin-top: 20px;
+  padding-right: 0;
+  text-align: justify;
+ }
+
+ }
+ 
+/* ---------------------------------------------------------------------------------- */
+ /* ----------> RESPONSIVE DESIGN FOR MOBILE DEVICE (PORTRAIT) <------- */
+ /* ---------------------------------------------------------------------------------- */
+
+ @media only screen and (max-width: 620px) {
+  #nav{
+    padding: 10px 20px;
+  }
+  .left_about{
+    padding: 30px;
+  }
+  .right_about{
+    padding: 30px;
+  }
+  .prev-arrow {
+    display: none;
+  }
+  .next-arrow {
+    display: none;
+  }
+  .slide .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+  .reward{
+    flex-basis: 100%;
+  }
+  #testimonial{
+    padding: 30px;
+  }
+  .testi-slider-container{
+    width: 95%;
+  }
+   .testi-slider_item{
+    padding: 20px 15px;
+   }
+   #blog, #plan, #contact{
+    padding: 20px 10px;
+   }
+   .blog_content, .price_item, .left_contact, .right_contact{
+    flex-basis: 100%;
+   }
+.form_top{
+  flex-wrap: wrap;
+  gap: 0;
+}
+   .form_top input{
+    flex-basis: 100%;
+    margin: 15px 0;
+   }
+   .blog_content .thumb_box{
+    height: 200px;
+   }
+   #footer{
+    padding: 20px 20px;
+    justify-content: center;
+   }
+   #footer .footer-div{
+    margin:20px;
+    flex-basis: 100%;
+   }
+   #articles{
+    padding: 50px 20px;
+   }
+  .per-blog{
+    margin-bottom: 30px;
+  }
+
+   /* -----------------> single article desing <-------------------------- */
+  .single_article{
+    padding: 100px 20px !important;
+  }
+   .single_container{
+    justify-content: flex-start;
+   }
+   .left_single{
+    flex-basis: 100%;
+    margin-bottom: 30px;
+   }
+   .right_single{
+    flex-basis: 95%;
+   }
+   .left_single .meta_data h1{
+    font-size: 1.5rem;
+   }
+   .left_single img{
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+   }
+   .left_single p{
+    margin-top: 10px;
+    padding-right: 0;
+    text-align: justify;
+   }
+
+ }
